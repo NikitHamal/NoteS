@@ -17,6 +17,7 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import com.notex.create.viewmodel.NoteViewModel
@@ -55,25 +56,20 @@ fun ViewScreen(
     viewId: Int,
     onEditClick: () -> Unit
 ) {
+    val notes by noteViewModel.allNotes.observeAsState(initial = emptyList())
+    val notebooks by noteViewModel.allNotebooks.observeAsState(initial = emptyList())
+    val notesForNotebook by noteViewModel.getNotesByNotebook(viewId).observeAsState(initial = emptyList())
+
+    val note = remember(notes, viewId) { notes.find { it.id == viewId } }
+    val notebook = remember(notebooks, viewId) { notebooks.find { it.id == viewId } }
+
     Scaffold(
         topBar = {
             TopAppBar(
                 title = {
                     if (viewType == "note") {
-                        val note by noteViewModel.allNotes.observeAsState(initial = emptyList())
-                            .let { notes ->
-                                remember {
-                                    mutableStateOf(notes.value?.find { it.id == viewId })
-                                }
-                            }
                         Text(note?.title ?: "Note")
                     } else {
-                        val notebook by noteViewModel.allNotebooks.observeAsState(initial = emptyList())
-                            .let { notebooks ->
-                                remember {
-                                    mutableStateOf(notebooks.value?.find { it.id == viewId })
-                                }
-                            }
                         Text(notebook?.name ?: "Notebook")
                     }
                 },
@@ -93,19 +89,12 @@ fun ViewScreen(
                 .fillMaxSize()
         ) {
             if (viewType == "note") {
-                val note by noteViewModel.allNotes.observeAsState(initial = emptyList())
-                    .let { notes ->
-                        remember {
-                            mutableStateOf(notes.value?.find { it.id == viewId })
-                        }
-                    }
                 note?.let {
                     Text(text = it.content)
                 }
             } else {
-                val notes by noteViewModel.getNotesByNotebook(viewId).observeAsState(initial = emptyList())
                 Column {
-                    notes.forEach { note ->
+                    notesForNotebook.forEach { note ->
                         Text(text = "# ${note.title}")
                         Text(text = note.content)
                         Text(text = "---")

@@ -19,6 +19,8 @@ import androidx.compose.material3.TextField
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -57,17 +59,21 @@ fun EditScreen(
 ) {
     val context = LocalContext.current
     val notebooks by noteViewModel.allNotebooks.observeAsState(initial = emptyList())
-    val note by noteViewModel.allNotes.observeAsState(initial = emptyList())
-        .let { notes ->
-            remember {
-                mutableStateOf(notes.value?.find { it.id == noteId })
-            }
-        }
+    val notes by noteViewModel.allNotes.observeAsState(initial = emptyList())
+    val note = remember(notes, noteId) { notes.find { it.id == noteId } }
 
-    var title by remember { mutableStateOf(note?.title ?: "") }
-    var content by remember { mutableStateOf(note?.content ?: "") }
-    var selectedNotebook by remember { mutableStateOf(note?.notebookId) }
+    var title by remember { mutableStateOf("") }
+    var content by remember { mutableStateOf("") }
+    var selectedNotebook by remember { mutableStateOf<Int?>(null) }
     var expanded by remember { mutableStateOf(false) }
+
+    LaunchedEffect(note) {
+        if (note != null) {
+            title = note.title
+            content = note.content
+            selectedNotebook = note.notebookId
+        }
+    }
 
     Scaffold(
         topBar = {
@@ -127,7 +133,7 @@ fun EditScreen(
             Button(onClick = {
                 if (title.isNotBlank()) {
                     val newNote = Note(
-                        id = noteId,
+                        id = if (noteId == -1) 0 else noteId,
                         title = title,
                         content = content,
                         notebookId = selectedNotebook
