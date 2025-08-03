@@ -41,6 +41,7 @@
 			android:name=".DebugActivity"
 			android:screenOrientation="portrait"
 			android:theme="@style/AppTheme.DebugActivity" />
+
 		<provider
 			android:name="androidx.startup.InitializationProvider"
 			android:authorities="com.notex.create.androidx-startup"

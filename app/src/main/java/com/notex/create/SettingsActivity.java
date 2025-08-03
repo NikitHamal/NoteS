@@ -53,6 +53,14 @@ public class SettingsActivity extends AppCompatActivity {
                 showClearDataDialog();
             }
         });
+        
+        findViewById(R.id.debug_console).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SettingsActivity.this, DebugActivity.class);
+                startActivity(intent);
+            }
+        });
     }
     
     private void exportAllNotes() {

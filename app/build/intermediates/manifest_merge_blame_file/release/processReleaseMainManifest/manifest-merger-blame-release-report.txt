@@ -1,0 +1,191 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.notex.create"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="24"
+9        android:targetSdkVersion="35" />
+10
+11    <permission
+11-->[androidx.core:core:1.13.1] /home/ubuntu/.gradle/caches/8.10.2/transforms/92269246030359abb05408e6dddfa65b/transformed/core-1.13.1/AndroidManifest.xml:22:5-24:47
+12        android:name="com.notex.create.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+12-->[androidx.core:core:1.13.1] /home/ubuntu/.gradle/caches/8.10.2/transforms/92269246030359abb05408e6dddfa65b/transformed/core-1.13.1/AndroidManifest.xml:23:9-81
+13        android:protectionLevel="signature" />
+13-->[androidx.core:core:1.13.1] /home/ubuntu/.gradle/caches/8.10.2/transforms/92269246030359abb05408e6dddfa65b/transformed/core-1.13.1/AndroidManifest.xml:24:9-44
+14
+15    <uses-permission android:name="com.notex.create.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+15-->[androidx.core:core:1.13.1] /home/ubuntu/.gradle/caches/8.10.2/transforms/92269246030359abb05408e6dddfa65b/transformed/core-1.13.1/AndroidManifest.xml:26:5-97
+15-->[androidx.core:core:1.13.1] /home/ubuntu/.gradle/caches/8.10.2/transforms/92269246030359abb05408e6dddfa65b/transformed/core-1.13.1/AndroidManifest.xml:26:22-94
+16
+17    <application
+17-->/workspace/app/src/main/AndroidManifest.xml:5:2-59:16
+18        android:allowBackup="true"
+18-->/workspace/app/src/main/AndroidManifest.xml:6:3-29
+19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+19-->[androidx.core:core:1.13.1] /home/ubuntu/.gradle/caches/8.10.2/transforms/92269246030359abb05408e6dddfa65b/transformed/core-1.13.1/AndroidManifest.xml:28:18-86
+20        android:extractNativeLibs="false"
+21        android:icon="@mipmap/ic_launcher"
+21-->/workspace/app/src/main/AndroidManifest.xml:7:3-37
+22        android:label="@string/app_name"
+22-->/workspace/app/src/main/AndroidManifest.xml:8:3-35
+23        android:requestLegacyExternalStorage="true"
+23-->/workspace/app/src/main/AndroidManifest.xml:9:3-46
+24        android:theme="@style/AppTheme"
+24-->/workspace/app/src/main/AndroidManifest.xml:11:3-34
+25        android:usesCleartextTraffic="true" >
+25-->/workspace/app/src/main/AndroidManifest.xml:10:3-38
+26        <activity
+26-->/workspace/app/src/main/AndroidManifest.xml:12:3-23:14
+27            android:name="com.notex.create.MainActivity"
+27-->/workspace/app/src/main/AndroidManifest.xml:13:4-32
+28            android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
+28-->/workspace/app/src/main/AndroidManifest.xml:14:4-97
+29            android:exported="true"
+29-->/workspace/app/src/main/AndroidManifest.xml:18:4-27
+30            android:hardwareAccelerated="true"
+30-->/workspace/app/src/main/AndroidManifest.xml:15:4-38
+31            android:screenOrientation="portrait"
+31-->/workspace/app/src/main/AndroidManifest.xml:17:4-40
+32            android:supportsPictureInPicture="true" >
+32-->/workspace/app/src/main/AndroidManifest.xml:16:4-43
+33            <intent-filter>
+33-->/workspace/app/src/main/AndroidManifest.xml:19:4-22:20
+34                <action android:name="android.intent.action.MAIN" />
+34-->/workspace/app/src/main/AndroidManifest.xml:20:5-57
+34-->/workspace/app/src/main/AndroidManifest.xml:20:13-54
+35
+36                <category android:name="android.intent.category.LAUNCHER" />
+36-->/workspace/app/src/main/AndroidManifest.xml:21:5-65
+36-->/workspace/app/src/main/AndroidManifest.xml:21:15-62
+37            </intent-filter>
+38        </activity>
+39        <activity
+39-->/workspace/app/src/main/AndroidManifest.xml:24:3-29:43
+40            android:name="com.notex.create.EditActivity"
+40-->/workspace/app/src/main/AndroidManifest.xml:25:4-32
+41            android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
+41-->/workspace/app/src/main/AndroidManifest.xml:26:4-97
+42            android:hardwareAccelerated="true"
+42-->/workspace/app/src/main/AndroidManifest.xml:27:4-38
+43            android:screenOrientation="portrait"
+43-->/workspace/app/src/main/AndroidManifest.xml:29:4-40
+44            android:supportsPictureInPicture="true" />
+44-->/workspace/app/src/main/AndroidManifest.xml:28:4-43
+45        <activity
+45-->/workspace/app/src/main/AndroidManifest.xml:30:3-34:46
+46            android:name="com.notex.create.ViewActivity"
+46-->/workspace/app/src/main/AndroidManifest.xml:31:4-32
+47            android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
+47-->/workspace/app/src/main/AndroidManifest.xml:32:4-97
+48            android:hardwareAccelerated="true"
+48-->/workspace/app/src/main/AndroidManifest.xml:33:4-38
+49            android:supportsPictureInPicture="true" />
+49-->/workspace/app/src/main/AndroidManifest.xml:34:4-43
+50        <activity
+50-->/workspace/app/src/main/AndroidManifest.xml:35:3-39:46
+51            android:name="com.notex.create.SettingsActivity"
+51-->/workspace/app/src/main/AndroidManifest.xml:36:4-36
+52            android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
+52-->/workspace/app/src/main/AndroidManifest.xml:37:4-97
+53            android:hardwareAccelerated="true"
+53-->/workspace/app/src/main/AndroidManifest.xml:38:4-38
+54            android:supportsPictureInPicture="true" />
+54-->/workspace/app/src/main/AndroidManifest.xml:39:4-43
+55        <activity
+55-->/workspace/app/src/main/AndroidManifest.xml:40:3-43:52
+56            android:name="com.notex.create.DebugActivity"
+56-->/workspace/app/src/main/AndroidManifest.xml:41:4-33
+57            android:screenOrientation="portrait"
+57-->/workspace/app/src/main/AndroidManifest.xml:42:4-40
+58            android:theme="@style/AppTheme.DebugActivity" />
+58-->/workspace/app/src/main/AndroidManifest.xml:43:4-49
+59
+60        <provider
+60-->/workspace/app/src/main/AndroidManifest.xml:45:3-55:14
+61            android:name="androidx.startup.InitializationProvider"
+61-->/workspace/app/src/main/AndroidManifest.xml:46:4-58
+62            android:authorities="com.notex.create.androidx-startup"
+62-->/workspace/app/src/main/AndroidManifest.xml:47:4-59
+63            android:exported="false" >
+63-->/workspace/app/src/main/AndroidManifest.xml:48:4-28
+64            <meta-data
+64-->/workspace/app/src/main/AndroidManifest.xml:49:4-51:40
+65                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+65-->/workspace/app/src/main/AndroidManifest.xml:50:5-66
+66                android:value="androidx.startup" />
+66-->/workspace/app/src/main/AndroidManifest.xml:51:5-37
+67            <meta-data
+67-->/workspace/app/src/main/AndroidManifest.xml:52:4-54:40
+68                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+68-->/workspace/app/src/main/AndroidManifest.xml:53:5-63
+69                android:value="androidx.startup" />
+69-->/workspace/app/src/main/AndroidManifest.xml:54:5-37
+70            <meta-data
+70-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ubuntu/.gradle/caches/8.10.2/transforms/71ab58e37e7b880b45b555cbaac03c2d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
+71                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+71-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ubuntu/.gradle/caches/8.10.2/transforms/71ab58e37e7b880b45b555cbaac03c2d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
+72                android:value="androidx.startup" />
+72-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ubuntu/.gradle/caches/8.10.2/transforms/71ab58e37e7b880b45b555cbaac03c2d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
+73        </provider>
+74
+75        <uses-library
+75-->/workspace/app/src/main/AndroidManifest.xml:56:3-58:31
+76            android:name="org.apache.http.legacy"
+76-->/workspace/app/src/main/AndroidManifest.xml:57:4-41
+77            android:required="false" />
+77-->/workspace/app/src/main/AndroidManifest.xml:58:4-28
+78        <uses-library
+78-->[androidx.window:window:1.0.0] /home/ubuntu/.gradle/caches/8.10.2/transforms/1adfc8b5210003beda852cd289863283/transformed/jetified-window-1.0.0/AndroidManifest.xml:25:9-27:40
+79            android:name="androidx.window.extensions"
+79-->[androidx.window:window:1.0.0] /home/ubuntu/.gradle/caches/8.10.2/transforms/1adfc8b5210003beda852cd289863283/transformed/jetified-window-1.0.0/AndroidManifest.xml:26:13-54
+80            android:required="false" />
+80-->[androidx.window:window:1.0.0] /home/ubuntu/.gradle/caches/8.10.2/transforms/1adfc8b5210003beda852cd289863283/transformed/jetified-window-1.0.0/AndroidManifest.xml:27:13-37
+81        <uses-library
+81-->[androidx.window:window:1.0.0] /home/ubuntu/.gradle/caches/8.10.2/transforms/1adfc8b5210003beda852cd289863283/transformed/jetified-window-1.0.0/AndroidManifest.xml:28:9-30:40
+82            android:name="androidx.window.sidecar"
+82-->[androidx.window:window:1.0.0] /home/ubuntu/.gradle/caches/8.10.2/transforms/1adfc8b5210003beda852cd289863283/transformed/jetified-window-1.0.0/AndroidManifest.xml:29:13-51
+83            android:required="false" />
+83-->[androidx.window:window:1.0.0] /home/ubuntu/.gradle/caches/8.10.2/transforms/1adfc8b5210003beda852cd289863283/transformed/jetified-window-1.0.0/AndroidManifest.xml:30:13-37
+84
+85        <receiver
+85-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ubuntu/.gradle/caches/8.10.2/transforms/71ab58e37e7b880b45b555cbaac03c2d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
+86            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+86-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ubuntu/.gradle/caches/8.10.2/transforms/71ab58e37e7b880b45b555cbaac03c2d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
+87            android:directBootAware="false"
+87-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ubuntu/.gradle/caches/8.10.2/transforms/71ab58e37e7b880b45b555cbaac03c2d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
+88            android:enabled="true"
+88-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ubuntu/.gradle/caches/8.10.2/transforms/71ab58e37e7b880b45b555cbaac03c2d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
+89            android:exported="true"
+89-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ubuntu/.gradle/caches/8.10.2/transforms/71ab58e37e7b880b45b555cbaac03c2d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
+90            android:permission="android.permission.DUMP" >
+90-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ubuntu/.gradle/caches/8.10.2/transforms/71ab58e37e7b880b45b555cbaac03c2d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
+91            <intent-filter>
+91-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ubuntu/.gradle/caches/8.10.2/transforms/71ab58e37e7b880b45b555cbaac03c2d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
+92                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+92-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ubuntu/.gradle/caches/8.10.2/transforms/71ab58e37e7b880b45b555cbaac03c2d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
+92-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ubuntu/.gradle/caches/8.10.2/transforms/71ab58e37e7b880b45b555cbaac03c2d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
+93            </intent-filter>
+94            <intent-filter>
+94-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ubuntu/.gradle/caches/8.10.2/transforms/71ab58e37e7b880b45b555cbaac03c2d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
+95                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+95-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ubuntu/.gradle/caches/8.10.2/transforms/71ab58e37e7b880b45b555cbaac03c2d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
+95-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ubuntu/.gradle/caches/8.10.2/transforms/71ab58e37e7b880b45b555cbaac03c2d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
+96            </intent-filter>
+97            <intent-filter>
+97-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ubuntu/.gradle/caches/8.10.2/transforms/71ab58e37e7b880b45b555cbaac03c2d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
+98                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+98-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ubuntu/.gradle/caches/8.10.2/transforms/71ab58e37e7b880b45b555cbaac03c2d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
+98-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ubuntu/.gradle/caches/8.10.2/transforms/71ab58e37e7b880b45b555cbaac03c2d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
+99            </intent-filter>
+100            <intent-filter>
+100-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ubuntu/.gradle/caches/8.10.2/transforms/71ab58e37e7b880b45b555cbaac03c2d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
+101                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+101-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ubuntu/.gradle/caches/8.10.2/transforms/71ab58e37e7b880b45b555cbaac03c2d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
+101-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ubuntu/.gradle/caches/8.10.2/transforms/71ab58e37e7b880b45b555cbaac03c2d/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
+102            </intent-filter>
+103        </receiver>
+104    </application>
+105
+106</manifest>
