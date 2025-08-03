@@ -15,6 +15,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+import com.google.android.material.snackbar.Snackbar;
+import android.content.Intent;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -75,11 +80,7 @@ public class MainActivity extends AppCompatActivity {
 		// Set up search
 		setupSearch();
 		
-		// Create search background drawable
-		GradientDrawable searchBackground = new GradientDrawable();
-		searchBackground.setCornerRadius(30);
-		searchBackground.setColor(0xFFF0F0F0);
-		findViewById(R.id.search_edit).setBackground(searchBackground);
+		// Search background is now handled by XML drawable
 		
 		// Load data
 		loadData();
@@ -259,8 +260,7 @@ public class MainActivity extends AppCompatActivity {
 							
 							@Override
 							public void onExportSelected() {
-								// Implement export functionality
-								Toast.makeText(MainActivity.this, "Export notebook: " + notebook.get("name"), Toast.LENGTH_SHORT).show();
+								exportNotebook(notebook.get("name").toString());
 							}
 							
 							@Override
@@ -343,8 +343,7 @@ public class MainActivity extends AppCompatActivity {
 							
 							@Override
 							public void onExportSelected() {
-								// Implement export functionality
-								Toast.makeText(MainActivity.this, "Export note: " + note.get("title"), Toast.LENGTH_SHORT).show();
+								exportNote(note);
 							}
 							
 							@Override
@@ -374,6 +373,88 @@ public class MainActivity extends AppCompatActivity {
 				notesContainer.addView(noteView);
 			}
 		}
+	}
+	
+	private void exportNote(HashMap<String, Object> note) {
+		try {
+			String fileName = note.get("title").toString().replaceAll("[^a-zA-Z0-9]", "_") + ".txt";
+			File downloadsDir = new File(getExternalFilesDir(null), "exports");
+			if (!downloadsDir.exists()) {
+				downloadsDir.mkdirs();
+			}
+			
+			File file = new File(downloadsDir, fileName);
+			FileWriter writer = new FileWriter(file);
+			
+			writer.write("Title: " + note.get("title").toString() + "\n");
+			String notebook = note.get("notebook").toString();
+			if (!notebook.isEmpty()) {
+				writer.write("Notebook: " + notebook + "\n");
+			}
+			writer.write("\n" + note.get("content").toString());
+			writer.close();
+			
+			// Share the exported file
+			Intent shareIntent = new Intent(Intent.ACTION_SEND);
+			shareIntent.setType("text/plain");
+			shareIntent.putExtra(Intent.EXTRA_SUBJECT, note.get("title").toString());
+			shareIntent.putExtra(Intent.EXTRA_TEXT, "Note exported to: " + file.getAbsolutePath());
+			startActivity(Intent.createChooser(shareIntent, "Export Note"));
+			
+			showSnackbar("Note exported successfully");
+		} catch (IOException e) {
+			showSnackbar("Failed to export note");
+		}
+	}
+	
+	private void exportNotebook(String notebookName) {
+		try {
+			String fileName = notebookName.replaceAll("[^a-zA-Z0-9]", "_") + "_notebook.txt";
+			File downloadsDir = new File(getExternalFilesDir(null), "exports");
+			if (!downloadsDir.exists()) {
+				downloadsDir.mkdirs();
+			}
+			
+			File file = new File(downloadsDir, fileName);
+			FileWriter writer = new FileWriter(file);
+			
+			writer.write("Notebook: " + notebookName + "\n");
+			writer.write("Exported on: " + new java.util.Date().toString() + "\n\n");
+			
+			int noteCount = 0;
+			for (HashMap<String, Object> note : notes) {
+				if (note.get("notebook").toString().equals(notebookName)) {
+					writer.write("=== " + note.get("title").toString() + " ===\n");
+					writer.write(note.get("content").toString() + "\n\n");
+					noteCount++;
+				}
+			}
+			
+			if (noteCount == 0) {
+				writer.write("No notes found in this notebook.\n");
+			}
+			
+			writer.close();
+			
+			// Share the exported file
+			Intent shareIntent = new Intent(Intent.ACTION_SEND);
+			shareIntent.setType("text/plain");
+			shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Notebook: " + notebookName);
+			shareIntent.putExtra(Intent.EXTRA_TEXT, "Notebook exported to: " + file.getAbsolutePath());
+			startActivity(Intent.createChooser(shareIntent, "Export Notebook"));
+			
+			showSnackbar("Notebook exported successfully");
+		} catch (IOException e) {
+			showSnackbar("Failed to export notebook");
+		}
+	}
+	
+	private void showSnackbar(String message) {
+		View rootView = findViewById(android.R.id.content);
+		Snackbar.make(rootView, message, Snackbar.LENGTH_LONG)
+			.setBackgroundTint(getColor(R.color.md_theme_light_surfaceContainer))
+			.setTextColor(getColor(R.color.md_theme_light_onSurface))
+			.show();
 	}
 	
 }

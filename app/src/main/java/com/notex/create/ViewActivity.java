@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+import com.google.android.material.chip.Chip;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
@@ -16,7 +17,7 @@ import java.util.HashMap;
 public class ViewActivity extends AppCompatActivity {
 	
 	private TextView titleText;
-	private TextView notebookText;
+	private Chip notebookChip;
 	private TextView contentText;
 	private TextView viewTitleText;
 	private SharedPreferences sharedPreferences;
@@ -32,7 +33,7 @@ public class ViewActivity extends AppCompatActivity {
 		
 		// Initialize views
 		titleText = findViewById(R.id.note_title);
-		notebookText = findViewById(R.id.notebook_name);
+		notebookChip = findViewById(R.id.notebook_chip);
 		contentText = findViewById(R.id.note_content);
 		viewTitleText = findViewById(R.id.view_title);
 		
@@ -94,10 +95,10 @@ public class ViewActivity extends AppCompatActivity {
 					
 					String notebook = note.get("notebook").toString();
 					if (notebook.isEmpty()) {
-						notebookText.setVisibility(View.GONE);
+						notebookChip.setVisibility(View.GONE);
 					} else {
-						notebookText.setText("Notebook: " + notebook);
-						notebookText.setVisibility(View.VISIBLE);
+						notebookChip.setText(notebook);
+						notebookChip.setVisibility(View.VISIBLE);
 					}
 					
 					viewTitleText.setText("Note");
@@ -108,7 +109,7 @@ public class ViewActivity extends AppCompatActivity {
 			// Display notes in notebook
 			viewTitleText.setText(viewName);
 			titleText.setVisibility(View.GONE);
-			notebookText.setVisibility(View.GONE);
+			notebookChip.setVisibility(View.GONE);
 			
 			StringBuilder content = new StringBuilder();
 			for (HashMap<String, Object> note : notes) {

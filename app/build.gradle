@@ -3,29 +3,74 @@ plugins {
 }
 
 android {
-	compileSdk 34
+	compileSdk 35
 	
 	useLibrary 'org.apache.http.legacy'
 	
 	defaultConfig {
 		applicationId "com.notex.create"
 		namespace "com.notex.create"
-		minSdkVersion 21
-		targetSdkVersion 34
+		minSdkVersion 24
+		targetSdkVersion 35
 		versionCode 1
 		versionName "1.0"
+		
+		testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+	}
+	
+	signingConfigs {
+		release {
+			storeFile file('../NoteX.keystore')
+			storePassword 'notex123'
+			keyAlias 'notex'
+			keyPassword 'notex123'
+		}
 	}
 	
 	buildTypes {
 		release {
-			minifyEnabled false
+			minifyEnabled true
+			shrinkResources true
 			proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+			signingConfig signingConfigs.release
 		}
+		debug {
+			applicationIdSuffix ".debug"
+			debuggable true
+		}
+	}
+	
+	compileOptions {
+		sourceCompatibility JavaVersion.VERSION_1_8
+		targetCompatibility JavaVersion.VERSION_1_8
+	}
+	
+	buildFeatures {
+		viewBinding true
 	}
 }
 
 dependencies {
 	implementation fileTree(dir: 'libs', include: ['*.jar'])
+	
+	// Material 3 and AndroidX
 	implementation 'androidx.appcompat:appcompat:1.7.0'
 	implementation 'com.google.android.material:material:1.12.0'
+	implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+	implementation 'androidx.core:core:1.13.1'
+	implementation 'androidx.activity:activity:1.9.2'
+	implementation 'androidx.fragment:fragment:1.8.4'
+	implementation 'androidx.lifecycle:lifecycle-viewmodel:2.8.6'
+	implementation 'androidx.lifecycle:lifecycle-livedata:2.8.6'
+	implementation 'androidx.recyclerview:recyclerview:1.3.2'
+	implementation 'androidx.cardview:cardview:1.0.0'
+	implementation 'androidx.preference:preference:1.2.1'
+	
+	// Gson for JSON handling
+	implementation 'com.google.code.gson:gson:2.10.1'
+	
+	// Testing
+	testImplementation 'junit:junit:4.13.2'
+	androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+	androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
 }

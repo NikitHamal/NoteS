@@ -5,10 +5,11 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
+import android.widget.AutoCompleteTextView;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.Toast;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -18,9 +19,9 @@ import java.util.HashMap;
 
 public class EditActivity extends AppCompatActivity {
     
-    private EditText titleEdit;
-    private EditText contentEdit;
-    private Spinner notebookSpinner;
+    private TextInputEditText titleEdit;
+    private TextInputEditText contentEdit;
+    private AutoCompleteTextView notebookDropdown;
     private SharedPreferences sharedPreferences;
     private Gson gson;
     private ArrayList<HashMap<String, Object>> notebooks;
@@ -36,7 +37,7 @@ public class EditActivity extends AppCompatActivity {
         // Initialize views
         titleEdit = findViewById(R.id.title_edit);
         contentEdit = findViewById(R.id.content_edit);
-        notebookSpinner = findViewById(R.id.notebook_spinner);
+        notebookDropdown = findViewById(R.id.notebook_dropdown);
         
         // Initialize SharedPreferences and Gson
         sharedPreferences = getSharedPreferences("NoteXData", Context.MODE_PRIVATE);
@@ -45,8 +46,8 @@ public class EditActivity extends AppCompatActivity {
         // Load data
         loadData();
         
-        // Set up spinner
-        setupSpinner();
+        // Set up dropdown
+        setupDropdown();
         
         // Check if editing existing note
         if (getIntent().hasExtra("title")) {
@@ -61,13 +62,12 @@ public class EditActivity extends AppCompatActivity {
                     titleEdit.setText(note.get("title").toString());
                     contentEdit.setText(note.get("content").toString());
                     
-                    // Set spinner selection
+                    // Set dropdown selection
                     String notebook = note.get("notebook").toString();
-                    for (int j = 0; j < notebooks.size(); j++) {
-                        if (notebooks.get(j).get("name").toString().equals(notebook)) {
-                            notebookSpinner.setSelection(j + 1); // +1 because of "None" option
-                            break;
-                        }
+                    if (!notebook.isEmpty()) {
+                        notebookDropdown.setText(notebook, false);
+                    } else {
+                        notebookDropdown.setText("None", false);
                     }
                     
                     break;
@@ -112,18 +112,18 @@ public class EditActivity extends AppCompatActivity {
         }
     }
     
-    private void setupSpinner() {
-        ArrayList<String> spinnerItems = new ArrayList<>();
-        spinnerItems.add("None");
+    private void setupDropdown() {
+        ArrayList<String> dropdownItems = new ArrayList<>();
+        dropdownItems.add("None");
         
         for (HashMap<String, Object> notebook : notebooks) {
-            spinnerItems.add(notebook.get("name").toString());
+            dropdownItems.add(notebook.get("name").toString());
         }
         
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
-            this, android.R.layout.simple_spinner_item, spinnerItems);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        notebookSpinner.setAdapter(adapter);
+            this, android.R.layout.simple_dropdown_item_1line, dropdownItems);
+        notebookDropdown.setAdapter(adapter);
+        notebookDropdown.setText("None", false);
     }
     
     private void saveNote() {
@@ -131,14 +131,14 @@ public class EditActivity extends AppCompatActivity {
         String content = contentEdit.getText().toString().trim();
         
         if (title.isEmpty()) {
-            Toast.makeText(this, "Please enter a title", Toast.LENGTH_SHORT).show();
+            showSnackbar("Please enter a title");
             return;
         }
         
         String notebook = "";
-        int spinnerPosition = notebookSpinner.getSelectedItemPosition();
-        if (spinnerPosition > 0) { // 0 is "None"
-            notebook = notebooks.get(spinnerPosition - 1).get("name").toString();
+        String selectedNotebook = notebookDropdown.getText().toString();
+        if (!selectedNotebook.equals("None") && !selectedNotebook.isEmpty()) {
+            notebook = selectedNotebook;
         }
         
         HashMap<String, Object> note = new HashMap<>();
@@ -163,7 +163,7 @@ public class EditActivity extends AppCompatActivity {
         json = gson.toJson(notebooks);
         sharedPreferences.edit().putString("notebooks", json).apply();
         
-        Toast.makeText(this, "Note saved", Toast.LENGTH_SHORT).show();
+        showSnackbar("Note saved");
         finish();
     }
     
@@ -186,5 +186,13 @@ public class EditActivity extends AppCompatActivity {
                 }
             }
         }
+    }
+    
+    private void showSnackbar(String message) {
+        View rootView = findViewById(android.R.id.content);
+        Snackbar.make(rootView, message, Snackbar.LENGTH_LONG)
+            .setBackgroundTint(getColor(R.color.md_theme_light_surfaceContainer))
+            .setTextColor(getColor(R.color.md_theme_light_onSurface))
+            .show();
     }
 }

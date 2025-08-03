@@ -1,85 +1,130 @@
-<LinearLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	android:orientation="vertical"
-	android:background="#FFFFFF">
-	<LinearLayout
-		android:id="@+id/linear1"
+	android:background="?attr/colorBackground"
+	android:fitsSystemWindows="true">
+	
+	<com.google.android.material.appbar.AppBarLayout
+		android:id="@+id/app_bar_layout"
 		android:layout_width="match_parent"
-		android:layout_height="56dp"
-		android:padding="8dp"
-		android:gravity="center_vertical"
-		android:orientation="horizontal">
-		<ImageView
-			android:id="@+id/back_button"
-			android:layout_width="40dp"
-			android:layout_height="40dp"
-			android:padding="8dp"
-			android:src="@drawable/icon_arrow_back_round"
-			android:scaleType="fitXY" />
-		<TextView
-			android:id="@+id/view_title"
-			android:layout_width="0dp"
-			android:layout_height="wrap_content"
-			android:gravity="center_horizontal|center_vertical"
-			android:text="View Note"
-			android:textSize="20sp"
-			android:textColor="#000000"
-			android:layout_weight="1" />
-		<ImageView
-			android:id="@+id/edit_button"
-			android:layout_width="40dp"
-			android:layout_height="40dp"
-			android:padding="8dp"
-			android:src="@drawable/icon_edit_round"
-			android:scaleType="fitXY" />
-	</LinearLayout>
-	<ScrollView
-		android:id="@+id/vscroll1"
+		android:layout_height="wrap_content"
+		android:background="?attr/colorSurface"
+		android:elevation="0dp"
+		app:elevation="0dp">
+		
+		<com.google.android.material.appbar.MaterialToolbar
+			android:id="@+id/toolbar"
+			android:layout_width="match_parent"
+			android:layout_height="?attr/actionBarSize"
+			android:paddingStart="4dp"
+			android:paddingEnd="16dp">
+			
+			<ImageView
+				android:id="@+id/back_button"
+				android:layout_width="48dp"
+				android:layout_height="48dp"
+				android:layout_gravity="start|center_vertical"
+				android:padding="12dp"
+				android:src="@drawable/icon_arrow_back_round"
+				android:background="?attr/selectableItemBackgroundBorderless"
+				android:contentDescription="Back"
+				android:tint="?attr/colorOnSurface" />
+			
+			<TextView
+				android:id="@+id/view_title"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:text="Note"
+				android:textAppearance="?attr/textAppearanceHeadlineSmall"
+				android:textColor="?attr/colorOnSurface"
+				android:fontFamily="sans-serif-medium" />
+			
+			<ImageView
+				android:id="@+id/edit_button"
+				android:layout_width="48dp"
+				android:layout_height="48dp"
+				android:layout_gravity="end|center_vertical"
+				android:padding="12dp"
+				android:src="@drawable/icon_edit_round"
+				android:background="?attr/selectableItemBackgroundBorderless"
+				android:contentDescription="Edit"
+				android:tint="?attr/colorPrimary" />
+				
+		</com.google.android.material.appbar.MaterialToolbar>
+		
+	</com.google.android.material.appbar.AppBarLayout>
+	
+	<androidx.core.widget.NestedScrollView
+		android:id="@+id/nested_scroll_view"
 		android:layout_width="match_parent"
-		android:layout_height="match_parent">
+		android:layout_height="match_parent"
+		android:scrollbars="none"
+		android:overScrollMode="never"
+		app:layout_behavior="@string/appbar_scrolling_view_behavior">
+		
 		<LinearLayout
-			android:id="@+id/linear2"
+			android:id="@+id/content_container"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:padding="16dp"
-			android:orientation="vertical">
+			android:orientation="vertical"
+			android:padding="16dp">
+			
+			<!-- Note Title -->
 			<TextView
 				android:id="@+id/note_title"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:layout_marginBottom="8dp"
-				android:padding="8dp"
+				android:layout_marginBottom="12dp"
 				android:text="Note Title"
-				android:textSize="24sp"
-				android:textColor="#000000" />
-			<TextView
-				android:id="@+id/notebook_name"
+				android:textAppearance="?attr/textAppearanceHeadlineMedium"
+				android:textColor="?attr/colorOnBackground"
+				android:fontFamily="sans-serif-medium"
+				android:lineSpacingExtra="4dp" />
+			
+			<!-- Notebook Chip -->
+			<com.google.android.material.chip.Chip
+				android:id="@+id/notebook_chip"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:layout_marginBottom="16dp"
-				android:padding="8dp"
-				android:text="Notebook: Personal"
-				android:textSize="14sp"
-				android:textColor="#7C4DFF" />
-			<View
-				android:id="@+id/view3"
-				android:layout_width="match_parent"
-				android:layout_height="1dp"
-				android:layout_marginBottom="16dp"
-				android:background="#EEEEEE" />
-			<TextView
-				android:id="@+id/note_content"
+				android:layout_marginBottom="24dp"
+				android:text="Personal"
+				android:textAppearance="?attr/textAppearanceLabelMedium"
+				app:chipBackgroundColor="?attr/colorSecondaryContainer"
+				app:chipStrokeWidth="0dp"
+				app:chipIcon="@drawable/icon_book_round"
+				app:chipIconTint="?attr/colorOnSecondaryContainer"
+				app:chipIconSize="16dp"
+				app:ensureMinTouchTargetSize="false"
+				android:visibility="gone" />
+			
+			<!-- Note Content Card -->
+			<com.google.android.material.card.MaterialCardView
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:padding="8dp"
-				android:text="Note content goes here..."
-				android:textSize="16sp"
-				android:textColor="#333333"
-				android:lineSpacingExtra="4dp" />
+				app:cardBackgroundColor="?attr/colorSurfaceContainerLow"
+				app:cardCornerRadius="16dp"
+				app:cardElevation="0dp"
+				app:strokeWidth="0dp">
+				
+				<TextView
+					android:id="@+id/note_content"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:padding="20dp"
+					android:text="Note content goes here..."
+					android:textAppearance="?attr/textAppearanceBodyLarge"
+					android:textColor="?attr/colorOnSurface"
+					android:lineSpacingExtra="6dp"
+					android:textIsSelectable="true" />
+					
+			</com.google.android.material.card.MaterialCardView>
+			
 		</LinearLayout>
-	</ScrollView>
-</LinearLayout>
+		
+	</androidx.core.widget.NestedScrollView>
+	
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
