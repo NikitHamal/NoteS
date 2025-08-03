@@ -1,6 +1,7 @@
 -keep class androidx.core.app.CoreComponentFactory { <init>(); }
 -keep class androidx.profileinstaller.ProfileInstallReceiver { <init>(); }
 -keep class androidx.startup.InitializationProvider { <init>(); }
+-keep class com.notex.create.DebugActivity { <init>(); }
 -keep class com.notex.create.EditActivity { <init>(); }
 -keep class com.notex.create.MainActivity { <init>(); }
 -keep class com.notex.create.SettingsActivity { <init>(); }

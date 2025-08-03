@@ -1420,7 +1420,6 @@ androidx.appcompat.app.ActionBar:
     public abstract void setCustomView(int)
     public abstract void setCustomView(android.view.View)
     public abstract void setCustomView(android.view.View,androidx.appcompat.app.ActionBar$LayoutParams)
-    public abstract void setDisplayHomeAsUpEnabled(boolean)
     public abstract void setDisplayOptions(int)
     public abstract void setDisplayOptions(int,int)
     public abstract void setDisplayShowCustomEnabled(boolean)
@@ -1447,7 +1446,6 @@ androidx.appcompat.app.ActionBar:
     public abstract void setSubtitle(int)
     public abstract void setSubtitle(java.lang.CharSequence)
     public abstract void setTitle(int)
-    public abstract void setTitle(java.lang.CharSequence)
     public abstract void show()
 androidx.appcompat.app.ActionBarDrawerToggle$1
 androidx.appcompat.app.ActionBarDrawerToggle$Delegate
@@ -1513,7 +1511,6 @@ androidx.appcompat.app.AppCompatActivity:
     private static final java.lang.String DELEGATE_TAG
     public void <init>(int)
     public androidx.appcompat.app.ActionBarDrawerToggle$Delegate getDrawerToggleDelegate()
-    public void setSupportActionBar(androidx.appcompat.widget.Toolbar)
     public void setSupportProgress(int)
     public void setSupportProgressBarIndeterminate(boolean)
     public void setSupportProgressBarIndeterminateVisibility(boolean)
@@ -1561,7 +1558,6 @@ androidx.appcompat.app.AppCompatDelegate:
     public abstract void setHandleNativeActionModesEnabled(boolean)
     static void setIsAutoStoreLocalesOptedIn(boolean)
     public abstract void setLocalNightMode(int)
-    public abstract void setSupportActionBar(androidx.appcompat.widget.Toolbar)
     public abstract androidx.appcompat.view.ActionMode startSupportActionMode(androidx.appcompat.view.ActionMode$Callback)
 androidx.appcompat.app.AppCompatDelegateImpl$ActionBarDrawableToggleImpl
 androidx.appcompat.app.AppCompatDelegateImpl$Api21Impl:
@@ -1572,8 +1568,6 @@ androidx.appcompat.app.AppCompatDelegateImpl$Api26Impl:
     private void <init>()
 androidx.appcompat.app.AppCompatDelegateImpl$Api33Impl:
     private void <init>()
-androidx.appcompat.app.AppCompatDelegateImpl$AppCompatWindowCallback:
-    void setActionBarCallback(androidx.appcompat.app.AppCompatDelegateImpl$ActionBarMenuCallback)
 androidx.appcompat.app.AppCompatDelegateImpl$AutoNightModeManager:
     boolean isListening()
 androidx.appcompat.app.AppCompatDelegateImpl$PanelFeatureState$SavedState$1
@@ -1596,7 +1590,6 @@ androidx.appcompat.app.AppCompatDelegateImpl:
     public boolean hasWindowFeature(int)
     public void setHandleNativeActionModesEnabled(boolean)
     public void setLocalNightMode(int)
-    public void setSupportActionBar(androidx.appcompat.widget.Toolbar)
 androidx.appcompat.app.AppCompatDialog:
     public void <init>(android.content.Context)
     protected void <init>(android.content.Context,boolean,android.content.DialogInterface$OnCancelListener)
@@ -1617,35 +1610,15 @@ androidx.appcompat.app.NavItemSelectedListener
 androidx.appcompat.app.ResourcesFlusher:
     private static final java.lang.String TAG
     private void <init>()
-androidx.appcompat.app.ToolbarActionBar$1
-androidx.appcompat.app.ToolbarActionBar$2
-androidx.appcompat.app.ToolbarActionBar$ActionMenuPresenterCallback
-androidx.appcompat.app.ToolbarActionBar$MenuBuilderCallback
-androidx.appcompat.app.ToolbarActionBar$ToolbarMenuCallback
 androidx.appcompat.app.ToolbarActionBar:
-    final androidx.appcompat.widget.DecorToolbar mDecorToolbar
-    private boolean mLastMenuVisibility
-    final androidx.appcompat.app.AppCompatDelegateImpl$ActionBarMenuCallback mMenuCallback
-    private boolean mMenuCallbackSet
-    private final androidx.appcompat.widget.Toolbar$OnMenuItemClickListener mMenuClicker
-    private final java.lang.Runnable mMenuInvalidator
-    private java.util.ArrayList mMenuVisibilityListeners
-    boolean mToolbarMenuPrepared
-    final android.view.Window$Callback mWindowCallback
-    void <init>(androidx.appcompat.widget.Toolbar,java.lang.CharSequence,android.view.Window$Callback)
     public void addOnMenuVisibilityListener(androidx.appcompat.app.ActionBar$OnMenuVisibilityListener)
     public void addTab(androidx.appcompat.app.ActionBar$Tab)
     public void addTab(androidx.appcompat.app.ActionBar$Tab,int)
     public void addTab(androidx.appcompat.app.ActionBar$Tab,int,boolean)
     public void addTab(androidx.appcompat.app.ActionBar$Tab,boolean)
-    public boolean closeOptionsMenu()
-    public boolean collapseActionView()
-    public void dispatchMenuVisibilityChanged(boolean)
     public android.view.View getCustomView()
-    public int getDisplayOptions()
     public float getElevation()
     public int getHeight()
-    private android.view.Menu getMenu()
     public int getNavigationItemCount()
     public int getNavigationMode()
     public int getSelectedNavigationIndex()
@@ -1653,19 +1626,11 @@ androidx.appcompat.app.ToolbarActionBar:
     public java.lang.CharSequence getSubtitle()
     public androidx.appcompat.app.ActionBar$Tab getTabAt(int)
     public int getTabCount()
-    public android.content.Context getThemedContext()
     public java.lang.CharSequence getTitle()
     public void hide()
-    public boolean invalidateOptionsMenu()
     public boolean isShowing()
     public boolean isTitleTruncated()
     public androidx.appcompat.app.ActionBar$Tab newTab()
-    public void onConfigurationChanged(android.content.res.Configuration)
-    void onDestroy()
-    public boolean onKeyShortcut(int,android.view.KeyEvent)
-    public boolean onMenuKeyEvent(android.view.KeyEvent)
-    public boolean openOptionsMenu()
-    void populateOptionsMenu()
     public void removeAllTabs()
     public void removeOnMenuVisibilityListener(androidx.appcompat.app.ActionBar$OnMenuVisibilityListener)
     public void removeTab(androidx.appcompat.app.ActionBar$Tab)
@@ -1676,10 +1641,7 @@ androidx.appcompat.app.ToolbarActionBar:
     public void setCustomView(int)
     public void setCustomView(android.view.View)
     public void setCustomView(android.view.View,androidx.appcompat.app.ActionBar$LayoutParams)
-    public void setDefaultDisplayHomeAsUpEnabled(boolean)
-    public void setDisplayHomeAsUpEnabled(boolean)
     public void setDisplayOptions(int)
-    public void setDisplayOptions(int,int)
     public void setDisplayShowCustomEnabled(boolean)
     public void setDisplayShowHomeEnabled(boolean)
     public void setDisplayShowTitleEnabled(boolean)
@@ -1697,14 +1659,11 @@ androidx.appcompat.app.ToolbarActionBar:
     public void setLogo(android.graphics.drawable.Drawable)
     public void setNavigationMode(int)
     public void setSelectedNavigationItem(int)
-    public void setShowHideAnimationEnabled(boolean)
     public void setSplitBackgroundDrawable(android.graphics.drawable.Drawable)
     public void setStackedBackgroundDrawable(android.graphics.drawable.Drawable)
     public void setSubtitle(int)
     public void setSubtitle(java.lang.CharSequence)
     public void setTitle(int)
-    public void setTitle(java.lang.CharSequence)
-    public void setWindowTitle(java.lang.CharSequence)
     public void show()
 androidx.appcompat.app.TwilightCalculator:
     private static final float ALTIDUTE_CORRECTION_CIVIL_TWILIGHT
@@ -1792,7 +1751,6 @@ androidx.appcompat.app.WindowDecorActionBar:
     public void setSubtitle(int)
     public void setSubtitle(java.lang.CharSequence)
     public void setTitle(int)
-    public void setTitle(java.lang.CharSequence)
     public void show()
 androidx.appcompat.content.res.AppCompatResources:
     private void <init>()
@@ -2212,9 +2170,7 @@ androidx.appcompat.widget.DecorToolbar:
     public abstract int getDropdownItemCount()
     public abstract int getDropdownSelectedPosition()
     public abstract int getHeight()
-    public abstract android.view.Menu getMenu()
     public abstract java.lang.CharSequence getSubtitle()
-    public abstract android.view.ViewGroup getViewGroup()
     public abstract int getVisibility()
     public abstract boolean hasEmbeddedTabs()
     public abstract boolean hasIcon()
@@ -2229,14 +2185,12 @@ androidx.appcompat.widget.DecorToolbar:
     public abstract void setDropdownParams(android.widget.SpinnerAdapter,android.widget.AdapterView$OnItemSelectedListener)
     public abstract void setDropdownSelectedPosition(int)
     public abstract void setLogo(android.graphics.drawable.Drawable)
-    public abstract void setMenuCallbacks(androidx.appcompat.view.menu.MenuPresenter$Callback,androidx.appcompat.view.menu.MenuBuilder$Callback)
     public abstract void setNavigationContentDescription(int)
     public abstract void setNavigationContentDescription(java.lang.CharSequence)
     public abstract void setNavigationIcon(int)
     public abstract void setNavigationIcon(android.graphics.drawable.Drawable)
     public abstract void setNavigationMode(int)
     public abstract void setSubtitle(java.lang.CharSequence)
-    public abstract void setTitle(java.lang.CharSequence)
 androidx.appcompat.widget.DialogTitle:
     public void <init>(android.content.Context)
     public void <init>(android.content.Context,android.util.AttributeSet,int)
@@ -2609,7 +2563,6 @@ androidx.appcompat.widget.Toolbar:
     public boolean isBackInvokedCallbackEnabled()
     public boolean isTitleTruncated()
     public void setContentInsetsAbsolute(int,int)
-    public void setMenuCallbacks(androidx.appcompat.view.menu.MenuPresenter$Callback,androidx.appcompat.view.menu.MenuBuilder$Callback)
     public void setTitleMargin(int,int,int,int)
 androidx.appcompat.widget.ToolbarWidgetWrapper:
     private static final int AFFECTS_LOGO_MASK
@@ -2622,9 +2575,7 @@ androidx.appcompat.widget.ToolbarWidgetWrapper:
     public int getDropdownItemCount()
     public int getDropdownSelectedPosition()
     public int getHeight()
-    public android.view.Menu getMenu()
     public java.lang.CharSequence getSubtitle()
-    public android.view.ViewGroup getViewGroup()
     public int getVisibility()
     public boolean hasEmbeddedTabs()
     public boolean hasIcon()
@@ -2636,7 +2587,6 @@ androidx.appcompat.widget.ToolbarWidgetWrapper:
     public void setDefaultNavigationIcon(android.graphics.drawable.Drawable)
     public void setDropdownParams(android.widget.SpinnerAdapter,android.widget.AdapterView$OnItemSelectedListener)
     public void setDropdownSelectedPosition(int)
-    public void setMenuCallbacks(androidx.appcompat.view.menu.MenuPresenter$Callback,androidx.appcompat.view.menu.MenuBuilder$Callback)
     public void setNavigationIcon(int)
     public void setNavigationMode(int)
 androidx.appcompat.widget.TooltipCompat$Api26Impl:
@@ -20024,6 +19974,9 @@ com.google.gson.stream.MalformedJsonException:
     public void <init>(java.lang.String,java.lang.Throwable)
     public void <init>(java.lang.Throwable)
 com.google.gson.stream.package-info
+com.notex.create.DebugActivity:
+    private static final int MAX_LOG_ENTRIES
+    private static final java.lang.String TAG
 com.notex.create.FileUtil
 com.notex.create.R$color
 com.notex.create.R$drawable
@@ -20038,6 +19991,7 @@ com.notex.create.SketchwareUtil$1
 com.notex.create.SketchwareUtil
 com.notex.create.databinding.BottomSheetOptionsBinding
 com.notex.create.databinding.CusBinding
+com.notex.create.databinding.DebugActivityBinding
 com.notex.create.databinding.DialogRenameBinding
 com.notex.create.databinding.EditBinding
 com.notex.create.databinding.ItemNoteBinding
@@ -26246,22 +26200,6 @@ androidx.appcompat.R$styleable:
     public static final int View_theme
 androidx.appcompat.app.ActionBar$LayoutParams
 androidx.appcompat.app.ActionBar$OnMenuVisibilityListener
-androidx.appcompat.app.ActionBar:
-    public abstract boolean closeOptionsMenu()
-    public abstract boolean collapseActionView()
-    public abstract void dispatchMenuVisibilityChanged(boolean)
-    public abstract int getDisplayOptions()
-    public abstract android.content.Context getThemedContext()
-    public abstract boolean invalidateOptionsMenu()
-    public abstract void onConfigurationChanged()
-    public abstract void onDestroy()
-    public abstract boolean onKeyShortcut()
-    public abstract boolean onMenuKeyEvent()
-    public abstract boolean openOptionsMenu()
-    public abstract void setDefaultDisplayHomeAsUpEnabled(boolean)
-    public abstract void setShowHideAnimationEnabled()
-    public abstract void setWindowTitle(java.lang.CharSequence)
-    public abstract androidx.appcompat.view.ActionMode startActionMode()
 androidx.appcompat.app.AlertController$2:
     public final synthetic androidx.appcompat.app.AlertController this$0
     public final synthetic android.view.View val$bottom
@@ -26356,7 +26294,6 @@ androidx.appcompat.app.AlertDialog:
     public static android.widget.ListView getListView()
 androidx.appcompat.app.AppCompatActivity:
     public android.content.res.Resources mResources
-    public final androidx.appcompat.app.WindowDecorActionBar getSupportActionBar()
     public abstract android.content.Intent getSupportParentActivityIntent()
     public abstract void initDelegate()
     public abstract void onCreateSupportNavigateUpTaskStack()
@@ -26366,9 +26303,9 @@ androidx.appcompat.app.AppCompatActivity:
     public final void onSupportActionModeFinished()
     public final void onSupportActionModeStarted()
     public abstract void onSupportContentChanged()
-    public abstract boolean onSupportNavigateUp()
     public final void onWindowStartingSupportActionMode()
     public abstract boolean performMenuItemShortcut()
+    public abstract void setSupportActionBar()
     public abstract void supportNavigateUpTo()
     public abstract boolean supportShouldUpRecreateTask()
 androidx.appcompat.app.AppCompatCallback:
@@ -26386,7 +26323,6 @@ androidx.appcompat.app.AppCompatDelegate:
     public abstract int getLocalNightMode()
     public abstract android.view.MenuInflater getMenuInflater()
     public abstract androidx.appcompat.app.ActionBar getSupportActionBar()
-    public abstract void invalidateOptionsMenu()
     public abstract void onConfigurationChanged()
     public abstract void onPostCreate()
     public abstract void onPostResume()
@@ -26394,6 +26330,7 @@ androidx.appcompat.app.AppCompatDelegate:
     public abstract void onStart()
     public abstract void onStop()
     public abstract void setOnBackInvokedDispatcher()
+    public abstract void setSupportActionBar()
     public abstract void setTheme()
 androidx.appcompat.app.AppCompatDelegateImpl$1
 androidx.appcompat.app.AppCompatDelegateImpl$4
@@ -26406,7 +26343,6 @@ androidx.appcompat.app.AppCompatDelegateImpl$ActionModeCallbackWrapperV9:
     public final boolean onCreateActionMode(androidx.appcompat.view.ActionMode,androidx.appcompat.view.menu.MenuBuilder)
 androidx.appcompat.app.AppCompatDelegateImpl$Api26Impl
 androidx.appcompat.app.AppCompatDelegateImpl$AppCompatWindowCallback:
-    public androidx.appcompat.app.AppCompatDelegateImpl$ActionBarMenuCallback mActionBarCallback
     public static boolean bypassDispatchKeyEvent()
     public static void bypassOnPanelClosed()
     public final boolean dispatchKeyEvent$androidx$appcompat$view$WindowCallbackWrapper(android.view.KeyEvent)
@@ -26417,6 +26353,7 @@ androidx.appcompat.app.AppCompatDelegateImpl$AppCompatWindowCallback:
     public final boolean onPreparePanel$androidx$appcompat$view$WindowCallbackWrapper(int,android.view.View,android.view.Menu)
     public final android.view.ActionMode onWindowStartingActionMode$androidx$appcompat$view$WindowCallbackWrapper(android.view.ActionMode$Callback)
     public final android.view.ActionMode onWindowStartingActionMode$androidx$appcompat$view$WindowCallbackWrapper(android.view.ActionMode$Callback,int)
+    public static void setActionBarCallback()
     public final androidx.appcompat.view.SupportActionModeWrapper startAsSupportActionMode(android.view.ActionMode$Callback)
 androidx.appcompat.app.AppCompatDelegateImpl$ListMenuDecorView:
     public static boolean isOutOfBounds()
@@ -26460,7 +26397,6 @@ androidx.appcompat.app.AppCompatDelegateImpl:
     public static boolean initializePanelContent()
     public static boolean initializePanelDecor()
     public static boolean initializePanelMenu()
-    public final void invalidateOptionsMenu()
     public static boolean isHandleNativeActionModesEnabled()
     public final void onConfigurationChanged()
     public static boolean onKeyDown()
@@ -26482,6 +26418,7 @@ androidx.appcompat.app.AppCompatDelegateImpl:
     public static void setConfigurationLocales()
     public static void setDefaultLocalesForLocaleList()
     public final void setOnBackInvokedDispatcher()
+    public final void setSupportActionBar()
     public final void setTheme()
     public final boolean shouldAnimateActionModeView()
     public static boolean shouldInheritContext()
@@ -26520,7 +26457,16 @@ androidx.appcompat.app.AppCompatViewInflater:
     public final void verifyNotNull(android.widget.TextView,java.lang.String)
 androidx.appcompat.app.LayoutIncludeDetector
 androidx.appcompat.app.LocaleOverlayHelper
-androidx.appcompat.app.ToolbarActionBar
+androidx.appcompat.app.ToolbarActionBar$$InternalSyntheticThrowCCEIfNotNull$87$c1b9c28c9fb71fecc98cd6b18259386b52fe2e79fc289c809c252483ac2ebb5e$0
+androidx.appcompat.app.ToolbarActionBar$2:
+    public final boolean onMenuItemClick()
+androidx.appcompat.app.ToolbarActionBar$ToolbarMenuCallback:
+    public static android.view.View onCreatePanelView()
+    public static boolean onPreparePanel()
+androidx.appcompat.app.ToolbarActionBar:
+    public final androidx.appcompat.app.ToolbarActionBar$2 mMenuClicker
+    public static void populateOptionsMenu()
+    public final void setDisplayOptions()
 androidx.appcompat.app.TwilightManager:
     public static android.location.Location getLastKnownLocation()
     public final android.location.Location getLastKnownLocationForProvider(java.lang.String)
@@ -26540,33 +26486,24 @@ androidx.appcompat.app.WindowDecorActionBar:
     public androidx.appcompat.widget.ScrollingTabContainerView mTabScrollView
     public java.util.ArrayList mTabs
     public static boolean checkShowingFlags(boolean,boolean)
-    public final boolean collapseActionView()
     public static void completeDeferredDestroyActionMode()
-    public final void dispatchMenuVisibilityChanged(boolean)
     public static void doHide()
     public static void doShow()
     public final void enableContentAnimations()
     public static androidx.appcompat.widget.DecorToolbar getDecorToolbar()
-    public final int getDisplayOptions()
     public static int getNavigationMode()
     public static void hideForActionMode()
     public final void hideForSystem()
-    public final void onConfigurationChanged()
     public final void onContentScrollStarted()
     public final void onContentScrollStopped()
-    public final boolean onKeyShortcut()
     public final void onWindowVisibilityChanged()
-    public static void setDisplayHomeAsUpEnabled()
-    public static void setDisplayOptions()
+    public final void setDisplayOptions()
     public static void setElevation()
     public static void setHideOnContentScrollEnabled()
     public static void setHomeButtonEnabled()
-    public final void setShowHideAnimationEnabled()
-    public final void setWindowTitle(java.lang.CharSequence)
     public static boolean shouldAnimateContextView()
     public static void showForActionMode()
     public final void showForSystem()
-    public final androidx.appcompat.view.ActionMode startActionMode()
 androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat$1
 androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat$AnimatableTransition
 androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat$AnimatedStateListState
@@ -26877,7 +26814,6 @@ androidx.appcompat.widget.ActionMenuPresenter:
 androidx.appcompat.widget.ActionMenuView$OnMenuItemClickListener:
     public abstract boolean onMenuItemClick()
 androidx.appcompat.widget.ActionMenuView:
-    public androidx.appcompat.view.menu.MenuPresenter$Callback mActionMenuPresenterCallback
     public final void dismissPopupMenus()
     public final androidx.appcompat.widget.ActionMenuView$LayoutParams generateLayoutParams(android.util.AttributeSet)
     public static androidx.appcompat.widget.ActionMenuView$LayoutParams generateOverflowButtonLayoutParams()
@@ -26887,7 +26823,7 @@ androidx.appcompat.widget.ActionMenuView:
     public static boolean isOverflowReserved()
     public static void onMeasureExactFormat()
     public static androidx.appcompat.view.menu.MenuBuilder peekMenu()
-    public static void setMenuCallbacks()
+    public final void setMenuCallbacks()
     public final boolean showOverflowMenu()
 androidx.appcompat.widget.AlertDialogLayout:
     public static void forceUniformWidth()
@@ -27062,8 +26998,10 @@ androidx.appcompat.widget.DecorToolbar:
     public abstract void dismissPopupMenus()
     public abstract android.content.Context getContext()
     public abstract int getDisplayOptions()
+    public abstract android.view.Menu getMenu()
     public abstract int getNavigationMode()
     public abstract java.lang.CharSequence getTitle()
+    public abstract android.view.ViewGroup getViewGroup()
     public abstract boolean hasExpandedActionView()
     public abstract boolean hideOverflowMenu()
     public abstract void initIndeterminateProgress()
@@ -27078,7 +27016,9 @@ androidx.appcompat.widget.DecorToolbar:
     public abstract void setIcon(android.graphics.drawable.Drawable)
     public abstract void setLogo()
     public abstract void setMenu()
+    public abstract void setMenuCallbacks()
     public abstract void setMenuPrepared()
+    public abstract void setTitle(java.lang.CharSequence)
     public abstract void setVisibility(int)
     public abstract void setWindowCallback()
     public abstract void setWindowTitle(java.lang.CharSequence)
@@ -27329,9 +27269,6 @@ androidx.appcompat.widget.Toolbar$SavedState$1:
     public static androidx.appcompat.widget.Toolbar$SavedState createFromParcel$1()
     public static androidx.appcompat.widget.Toolbar$SavedState[] newArray()
 androidx.appcompat.widget.Toolbar:
-    public androidx.appcompat.view.menu.MenuPresenter$Callback mActionMenuPresenterCallback
-    public androidx.appcompat.view.menu.MenuBuilder$Callback mMenuBuilderCallback
-    public androidx.appcompat.widget.Toolbar$OnMenuItemClickListener mOnMenuItemClickListener
     public static void addChildrenForExpandedActionView()
     public final void addMenuProvider(androidx.fragment.app.FragmentManager$2)
     public final boolean canShowOverflowMenu()
@@ -27345,17 +27282,16 @@ androidx.appcompat.widget.Toolbar:
     public final boolean hasExpandedActionView()
     public final boolean hideOverflowMenu()
     public final boolean isOverflowMenuShowPending()
-    public final boolean isOverflowMenuShowing()
     public static void onCreateMenu()
     public static void postShowOverflowMenu()
     public static void removeChildrenForExpandedActionView()
     public final void removeMenuProvider(androidx.fragment.app.FragmentManager$2)
     public static void setContentInsetsRelative()
     public static void setMenu()
+    public final void setMenuCallbacks()
     public static void setSubtitleTextAppearance()
     public static void setTitleTextAppearance()
     public static boolean shouldCollapse()
-    public final boolean showOverflowMenu()
 androidx.appcompat.widget.ToolbarWidgetWrapper:
     public int mNavigationMode
     public androidx.appcompat.widget.ScrollingTabContainerView mTabView
@@ -27365,8 +27301,10 @@ androidx.appcompat.widget.ToolbarWidgetWrapper:
     public final void dismissPopupMenus()
     public final android.content.Context getContext()
     public final int getDisplayOptions()
+    public final android.view.Menu getMenu()
     public final int getNavigationMode()
     public final java.lang.CharSequence getTitle()
+    public final android.view.ViewGroup getViewGroup()
     public final boolean hasExpandedActionView()
     public final boolean hideOverflowMenu()
     public final void initIndeterminateProgress()
@@ -27383,12 +27321,13 @@ androidx.appcompat.widget.ToolbarWidgetWrapper:
     public final void setLogo()
     public final void setLogo(android.graphics.drawable.Drawable)
     public final void setMenu()
+    public final void setMenuCallbacks()
     public final void setMenuPrepared()
     public static void setNavigationContentDescription()
     public static void setNavigationContentDescription$1()
     public static void setNavigationIcon()
     public static void setSubtitle()
-    public static void setTitle()
+    public final void setTitle(java.lang.CharSequence)
     public final void setTitleInt(java.lang.CharSequence)
     public final void setVisibility(int)
     public final void setWindowCallback()
@@ -28985,7 +28924,7 @@ androidx.core.os.LocaleListCompat:
     public final int size()
     public final java.lang.String toLanguageTags()
     public static androidx.core.os.LocaleListCompat wrap(android.os.LocaleList)
-androidx.core.os.LocaleListCompatWrapper$$InternalSyntheticThrowCCEIfNotNull$204$eabde584e09f5dbef5e5c77b987ffae1119ec566c4556bde1e78e256d6ae9d7b$0
+androidx.core.os.LocaleListCompatWrapper$$InternalSyntheticThrowCCEIfNotNull$205$eabde584e09f5dbef5e5c77b987ffae1119ec566c4556bde1e78e256d6ae9d7b$0
 androidx.core.os.LocaleListCompatWrapper
 androidx.core.os.LocaleListInterface:
     public abstract java.util.Locale get()
@@ -29382,7 +29321,7 @@ androidx.core.view.WindowInsetsControllerCompat
 androidx.core.view.accessibility.AccessibilityEventCompat
 androidx.core.view.accessibility.AccessibilityManagerCompat$TouchExplorationStateChangeListener
 androidx.core.view.accessibility.AccessibilityManagerCompat
-androidx.core.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityActionCompat$$InternalSyntheticThrowCCEIfNotNull$174$51a518e2562bdd83f1a37db6273eca8c40d29d82445ffc5c9314f2450daba410$0
+androidx.core.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityActionCompat$$InternalSyntheticThrowCCEIfNotNull$175$51a518e2562bdd83f1a37db6273eca8c40d29d82445ffc5c9314f2450daba410$0
 androidx.core.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityActionCompat:
     public static final androidx.core.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityActionCompat ACTION_ACCESSIBILITY_FOCUS
     public static final androidx.core.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityActionCompat ACTION_CLEAR_ACCESSIBILITY_FOCUS
@@ -29998,8 +29937,8 @@ androidx.fragment.app.BackStackRecordState:
 androidx.fragment.app.BackStackState$1:
     public static androidx.fragment.app.BackStackState createFromParcel()
     public static androidx.fragment.app.BackStackState[] newArray()
-androidx.fragment.app.DefaultSpecialEffectsController$$InternalSyntheticThrowCCEIfNotNull$146$fa68a3ad6243a1e7b5c55a4b289aa5df32ad15155263df1f3f8a6998e7c27a9e$0
-androidx.fragment.app.DefaultSpecialEffectsController$$InternalSyntheticThrowCCEIfNotNull$146$fa68a3ad6243a1e7b5c55a4b289aa5df32ad15155263df1f3f8a6998e7c27a9e$1
+androidx.fragment.app.DefaultSpecialEffectsController$$InternalSyntheticThrowCCEIfNotNull$147$fa68a3ad6243a1e7b5c55a4b289aa5df32ad15155263df1f3f8a6998e7c27a9e$0
+androidx.fragment.app.DefaultSpecialEffectsController$$InternalSyntheticThrowCCEIfNotNull$147$fa68a3ad6243a1e7b5c55a4b289aa5df32ad15155263df1f3f8a6998e7c27a9e$1
 androidx.fragment.app.DefaultSpecialEffectsController$AnimationEffect:
     public static androidx.fragment.app.DefaultSpecialEffectsController$AnimationInfo getAnimationInfo()
 androidx.fragment.app.DefaultSpecialEffectsController$AnimatorEffect:
@@ -30239,12 +30178,12 @@ androidx.fragment.app.FragmentLifecycleCallbacksDispatcher$$InternalSyntheticThr
 androidx.fragment.app.FragmentLifecycleCallbacksDispatcher$$InternalSyntheticThrowCCEIfNotNull$25$533456fa96e583a636e9ec9068ea89e7191f053c02130cd49bb4c0f9e0bbcc1d$0
 androidx.fragment.app.FragmentLifecycleCallbacksDispatcher$$InternalSyntheticThrowCCEIfNotNull$25$b6a8bf1d588f70892eec2d6fb98480ada178a57c3a45fd5a7d30227d1b1d8e5e$0
 androidx.fragment.app.FragmentLifecycleCallbacksDispatcher$FragmentLifecycleCallbacksHolder
-androidx.fragment.app.FragmentManager$$InternalSyntheticThrowCCEIfNotNull$161$5def81799f4e480971deb6f4ba60ac23ab69c377367e533c13f7a78b8b9d120b$0
+androidx.fragment.app.FragmentManager$$InternalSyntheticThrowCCEIfNotNull$162$5def81799f4e480971deb6f4ba60ac23ab69c377367e533c13f7a78b8b9d120b$0
 androidx.fragment.app.FragmentManager$$InternalSyntheticThrowCCEIfNotNull$19$d1c12ac45bb62655b3985ec7111e412585f4af278c7e219126a3d81805c17ad1$0
 androidx.fragment.app.FragmentManager$$InternalSyntheticThrowCCEIfNotNull$19$e900c5eec6ac121db07566194b89bf4d527a6d938b075c31901883695b7458f4$0
 androidx.fragment.app.FragmentManager$$InternalSyntheticThrowCCEIfNotNull$75$38310c1fbeb590885a869c34445dd6a41dd30585e52dc29e64f3656596404d15$0
 androidx.fragment.app.FragmentManager$$InternalSyntheticThrowCCEIfNotNull$75$38310c1fbeb590885a869c34445dd6a41dd30585e52dc29e64f3656596404d15$1
-androidx.fragment.app.FragmentManager$1$$InternalSyntheticThrowCCEIfNotNull$133$65ba6792d6f66d4ba163358632520bf65f1f8ffc0030703c83f5db859d189807$0
+androidx.fragment.app.FragmentManager$1$$InternalSyntheticThrowCCEIfNotNull$134$65ba6792d6f66d4ba163358632520bf65f1f8ffc0030703c83f5db859d189807$0
 androidx.fragment.app.FragmentManager$10:
     public static void onActivityResult()
 androidx.fragment.app.FragmentManager$1:
@@ -30585,7 +30524,7 @@ androidx.lifecycle.ProcessLifecycleOwner:
     public static void dispatchPauseIfNeeded$lifecycle_process_release()
     public final void dispatchStopIfNeeded$lifecycle_process_release()
 androidx.lifecycle.ReportFragment$ActivityInitializationListener
-androidx.lifecycle.ReportFragment$Companion$$InternalSyntheticThrowCCEIfNotNull$183$6606f6a9d6c00feabd13f693204c7c685bcfd577a1c056fdbb01af5d22a24ba7$0
+androidx.lifecycle.ReportFragment$Companion$$InternalSyntheticThrowCCEIfNotNull$184$6606f6a9d6c00feabd13f693204c7c685bcfd577a1c056fdbb01af5d22a24ba7$0
 androidx.lifecycle.ReportFragment$Companion:
     public static androidx.lifecycle.ReportFragment get()
 androidx.lifecycle.ReportFragment$LifecycleCallbacks$Companion:
@@ -33264,7 +33203,7 @@ com.google.android.material.datepicker.MaterialCalendar$$InternalSyntheticThrowC
 com.google.android.material.datepicker.MaterialCalendar$$InternalSyntheticThrowCCEIfNotNull$80$a4c48b855944400f3a37fd7ce152a9437d0f7b776d2ddb6f6ae01d36b3b56503$1
 com.google.android.material.datepicker.MaterialCalendar$1:
     public final synthetic com.google.android.material.datepicker.MaterialCalendar this$0
-com.google.android.material.datepicker.MaterialCalendar$3$$InternalSyntheticThrowCCEIfNotNull$125$11d4ec5a207ce79f5d476fe91140e0eb1349444d0450a9810d3f7c5973a317b3$0
+com.google.android.material.datepicker.MaterialCalendar$3$$InternalSyntheticThrowCCEIfNotNull$126$11d4ec5a207ce79f5d476fe91140e0eb1349444d0450a9810d3f7c5973a317b3$0
 com.google.android.material.datepicker.MaterialCalendar$3:
     public static void onDayClick()
 com.google.android.material.datepicker.MaterialCalendar$4:
@@ -33304,7 +33243,7 @@ com.google.android.material.datepicker.MaterialCalendarGridView:
 com.google.android.material.datepicker.MaterialDatePicker$$InternalSyntheticThrowCCEIfNotNull$82$bda0d98b3cbf8cb5d502e9d97dd349e14cb6aff4142636fd41860955b0102acd$0
 com.google.android.material.datepicker.MaterialDatePicker$$InternalSyntheticThrowCCEIfNotNull$82$bda0d98b3cbf8cb5d502e9d97dd349e14cb6aff4142636fd41860955b0102acd$1
 com.google.android.material.datepicker.MaterialDatePicker$$InternalSyntheticThrowCCEIfNotNull$9$6f9012f149ef32ee9a67cbfe32c48b15f6aac2dda686c51d0d808efe178f2b7f$0
-com.google.android.material.datepicker.MaterialDatePicker$1$$InternalSyntheticThrowCCEIfNotNull$177$fa1d04f1d21baf893c4683b5052f5e1a3880949fd73761df9abbfd4297b09909$0
+com.google.android.material.datepicker.MaterialDatePicker$1$$InternalSyntheticThrowCCEIfNotNull$178$fa1d04f1d21baf893c4683b5052f5e1a3880949fd73761df9abbfd4297b09909$0
 com.google.android.material.datepicker.MaterialDatePicker$1
 com.google.android.material.datepicker.MaterialDatePicker$2
 com.google.android.material.datepicker.MaterialDatePicker$3:
@@ -33335,7 +33274,7 @@ com.google.android.material.datepicker.MaterialDatePicker:
     public final void updateToggleContentDescription(com.google.android.material.internal.CheckableImageButton)
 com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener
 com.google.android.material.datepicker.MaterialTextInputPicker$$InternalSyntheticThrowCCEIfNotNull$80$10f04847218b83c9bef9d4f97278bb386358b28cd393fa1c3f960e62558304c9$0
-com.google.android.material.datepicker.MaterialTextInputPicker$1$$InternalSyntheticThrowCCEIfNotNull$89$9a51c40b50fa3e5cc8e45f9bf83fc78084289192815bb0faf8a798067d08fdea$0
+com.google.android.material.datepicker.MaterialTextInputPicker$1$$InternalSyntheticThrowCCEIfNotNull$90$9a51c40b50fa3e5cc8e45f9bf83fc78084289192815bb0faf8a798067d08fdea$0
 com.google.android.material.datepicker.MaterialTextInputPicker$1
 com.google.android.material.datepicker.MaterialTextInputPicker:
     public com.google.android.material.datepicker.DateSelector dateSelector
@@ -34878,6 +34817,28 @@ com.google.gson.stream.JsonWriter:
     public static void setIndent()
     public static void setLenient()
     public static void setSerializeNulls()
+com.notex.create.DebugActivity:
+    public static void checkCrashInfo()
+    public static void clearLogs()
+    public static void displaySystemInfo()
+    public static void exportLogs()
+    public static java.lang.String getAppVersion()
+    public static java.lang.String getAvailableMemory()
+    public static java.lang.String getAvailableStorage()
+    public static java.lang.String getStackTrace()
+    public static java.lang.String getTotalMemory()
+    public static synthetic void lambda$setupUI$0()
+    public static void lambda$setupUI$1()
+    public static void lambda$setupUI$2()
+    public static void lambda$setupUI$3()
+    public static synthetic void lambda$showCrashDialog$6()
+    public static synthetic void lambda$startLogCollection$4()
+    public static synthetic void lambda$startLogCollection$5()
+    public static void restartApp()
+    public static void setupCrashHandler()
+    public static void setupUI()
+    public static void showCrashDialog()
+    public static void startLogCollection()
 com.notex.create.EditActivity$3:
     public final synthetic com.notex.create.EditActivity this$0
 com.notex.create.EditActivity$4:
@@ -34912,7 +34873,7 @@ com.notex.create.OptionsBottomSheet:
     public static void showRenameDialog()
 com.notex.create.SettingsActivity$$InternalSyntheticBackport$1$5521028836b9cc63a92a83674308149d700a78ccd286865667f4a057678faf09$0
 com.notex.create.SettingsActivity$$InternalSyntheticBackport$1$5521028836b9cc63a92a83674308149d700a78ccd286865667f4a057678faf09$1
-com.notex.create.SettingsActivity$4:
+com.notex.create.SettingsActivity$5:
     public final synthetic com.notex.create.SettingsActivity this$0
 com.notex.create.SettingsActivity:
     public static void clearAllData()

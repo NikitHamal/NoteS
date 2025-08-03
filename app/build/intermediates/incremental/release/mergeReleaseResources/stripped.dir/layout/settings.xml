@@ -251,6 +251,86 @@
 				
 			</com.google.android.material.card.MaterialCardView>
 			
+			<!-- Debug Section -->
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="8dp"
+				android:layout_marginBottom="12dp"
+				android:text="Debug"
+				android:textAppearance="?attr/textAppearanceTitleMedium"
+				android:textColor="?attr/colorPrimary"
+				android:fontFamily="sans-serif-medium" />
+			
+			<!-- Debug Items -->
+			<com.google.android.material.card.MaterialCardView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="16dp"
+				app:cardBackgroundColor="?attr/colorSurfaceContainer"
+				app:cardCornerRadius="12dp"
+				app:cardElevation="0dp"
+				app:strokeWidth="0dp">
+				
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical">
+					
+					<!-- Debug Console -->
+					<LinearLayout
+						android:id="@+id/debug_console"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal"
+						android:padding="16dp"
+						android:gravity="center_vertical"
+						android:clickable="true"
+						android:focusable="true"
+						android:background="?attr/selectableItemBackground">
+						
+						<ImageView
+							android:layout_width="24dp"
+							android:layout_height="24dp"
+							android:layout_marginEnd="16dp"
+							android:src="@drawable/icon_help_round"
+							android:tint="?attr/colorOnSurfaceVariant" />
+						
+						<LinearLayout
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:orientation="vertical">
+							
+							<TextView
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:text="Debug Console"
+								android:textAppearance="?attr/textAppearanceBodyLarge"
+								android:textColor="?attr/colorOnSurface" />
+							
+							<TextView
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:layout_marginTop="2dp"
+								android:text="View logs and crash information"
+								android:textAppearance="?attr/textAppearanceBodySmall"
+								android:textColor="?attr/colorOnSurfaceVariant" />
+								
+						</LinearLayout>
+						
+						<ImageView
+							android:layout_width="24dp"
+							android:layout_height="24dp"
+							android:src="@drawable/icon_chevron_right_round"
+							android:tint="?attr/colorOnSurfaceVariant" />
+							
+					</LinearLayout>
+					
+				</LinearLayout>
+				
+			</com.google.android.material.card.MaterialCardView>
+			
 			<!-- About Section -->
 			<TextView
 				android:layout_width="match_parent"

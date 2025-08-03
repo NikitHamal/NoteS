@@ -3144,6 +3144,7 @@ drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
 drawable card_background
+drawable debug_log_background
 drawable default_image
 drawable design_fab_background
 drawable design_ic_visibility
@@ -3178,8 +3179,10 @@ drawable icon_arrow_back_round
 drawable icon_backup_round
 drawable icon_book_round
 drawable icon_chevron_right_round
+drawable icon_content_copy_round
 drawable icon_delete_round
 drawable icon_description_round
+drawable icon_download_round
 drawable icon_edit_round
 drawable icon_export_round
 drawable icon_format_size_round
@@ -3190,6 +3193,7 @@ drawable icon_more_vert_round
 drawable icon_note_round
 drawable icon_palette_round
 drawable icon_person_round
+drawable icon_refresh_round
 drawable icon_restore_round
 drawable icon_save_round
 drawable icon_search_round
@@ -3402,6 +3406,7 @@ id checked
 id chronometer
 id circle_center
 id clear_all_data
+id clear_logs_button
 id clear_text
 id clip_horizontal
 id clip_vertical
@@ -3420,14 +3425,18 @@ id content_input_layout
 id contiguous
 id continuousVelocity
 id coordinator
+id copy_logs_button
 id cos
 id counterclockwise
 id cradle
+id crash_info_card
+id crash_info_text
 id currentState
 id custom
 id customPanel
 id cut
 id date_picker_actions
+id debug_console
 id decelerate
 id decelerateAndComplete
 id decor_content_parent
@@ -3484,6 +3493,7 @@ id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
 id export_all_notes
+id export_logs_button
 id fab_add
 id fade
 id fill
@@ -3547,6 +3557,7 @@ id linear1
 id listMode
 id list_item
 id locale
+id log_text
 id ltr
 id m3_side_sheet
 id marquee
@@ -3692,6 +3703,7 @@ id ratio
 id rectangles
 id recycler_view
 id report_drawn
+id restart_app_button
 id reverseSawtooth
 id right
 id rightToLeft
@@ -3769,6 +3781,7 @@ id submenuarrow
 id submit_area
 id supportScrollUp
 id switchWidget
+id system_info_text
 id tabMode
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
@@ -3965,6 +3978,7 @@ layout abc_tooltip
 layout bottom_sheet_options
 layout cus
 layout custom_dialog
+layout debug_activity
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -4256,6 +4270,7 @@ style Animation_Material3_SideSheetDialog_Left
 style Animation_Material3_SideSheetDialog_Right
 style Animation_MaterialComponents_BottomSheetDialog
 style AppTheme
+style AppTheme_DebugActivity
 style Base_AlertDialog_AppCompat
 style Base_AlertDialog_AppCompat_Light
 style Base_Animation_AppCompat_Dialog

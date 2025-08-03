@@ -142,6 +142,13 @@
         <item name="windowNoTitle">true</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
     </style>
+    <style name="AppTheme.DebugActivity" parent="AppTheme">
+        <item name="android:windowBackground">?attr/colorSurface</item>
+        <item name="android:statusBarColor">?attr/colorSurface</item>
+        <item name="android:navigationBarColor">?attr/colorSurface</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+    </style>
     <style name="FabShapeAppearance" parent="ShapeAppearance.NoteX.CornerLarge"/>
     <style name="PopupMenu" parent="Widget.Material3.PopupMenu">
         <item name="android:popupBackground">?attr/colorSurfaceContainer</item>

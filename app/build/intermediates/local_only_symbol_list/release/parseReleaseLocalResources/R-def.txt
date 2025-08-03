@@ -72,6 +72,7 @@ color md_theme_light_tertiaryContainer
 drawable bottom_sheet_background
 drawable bottom_sheet_drag_handle
 drawable card_background
+drawable debug_log_background
 drawable default_image
 drawable ic_bold
 drawable ic_italic
@@ -82,8 +83,10 @@ drawable icon_arrow_back_round
 drawable icon_backup_round
 drawable icon_book_round
 drawable icon_chevron_right_round
+drawable icon_content_copy_round
 drawable icon_delete_round
 drawable icon_description_round
+drawable icon_download_round
 drawable icon_edit_round
 drawable icon_export_round
 drawable icon_format_size_round
@@ -94,6 +97,7 @@ drawable icon_more_vert_round
 drawable icon_note_round
 drawable icon_palette_round
 drawable icon_person_round
+drawable icon_refresh_round
 drawable icon_restore_round
 drawable icon_save_round
 drawable icon_search_round
@@ -113,9 +117,14 @@ id app_bar_layout
 id back_button
 id cardview1
 id clear_all_data
+id clear_logs_button
 id content_container
 id content_edit
 id content_input_layout
+id copy_logs_button
+id crash_info_card
+id crash_info_text
+id debug_console
 id edit_button
 id edit_text
 id empty_notebooks_icon
@@ -127,8 +136,10 @@ id empty_notes_subtitle
 id empty_notes_title
 id empty_notes_view
 id export_all_notes
+id export_logs_button
 id fab_add
 id linear1
+id log_text
 id menu_button
 id more_button
 id nested_scroll_view
@@ -149,10 +160,12 @@ id option_edit
 id option_export
 id option_rename
 id option_share
+id restart_app_button
 id save_button
 id search_container
 id search_edit
 id search_icon
+id system_info_text
 id title_edit
 id title_input_layout
 id toolbar
@@ -160,6 +173,7 @@ id toolbar_title
 id view_title
 layout bottom_sheet_options
 layout cus
+layout debug_activity
 layout dialog_rename
 layout edit
 layout item_note
@@ -170,6 +184,7 @@ layout view
 mipmap ic_launcher
 string app_name
 style AppTheme
+style AppTheme.DebugActivity
 style FabShapeAppearance
 style PopupMenu
 style ShapeAppearance.NoteX.BottomSheet

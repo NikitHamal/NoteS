@@ -52,6 +52,10 @@
             android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
             android:hardwareAccelerated="true"
             android:supportsPictureInPicture="true" />
+        <activity
+            android:name="com.notex.create.DebugActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.DebugActivity" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"

@@ -37,6 +37,9 @@ public final class SettingsBinding implements ViewBinding {
   public final LinearLayout contentContainer;
 
   @NonNull
+  public final LinearLayout debugConsole;
+
+  @NonNull
   public final LinearLayout exportAllNotes;
 
   @NonNull
@@ -50,14 +53,15 @@ public final class SettingsBinding implements ViewBinding {
 
   private SettingsBinding(@NonNull CoordinatorLayout rootView, @NonNull AppBarLayout appBarLayout,
       @NonNull ImageView backButton, @NonNull LinearLayout clearAllData,
-      @NonNull LinearLayout contentContainer, @NonNull LinearLayout exportAllNotes,
-      @NonNull NestedScrollView nestedScrollView, @NonNull MaterialToolbar toolbar,
-      @NonNull TextView toolbarTitle) {
+      @NonNull LinearLayout contentContainer, @NonNull LinearLayout debugConsole,
+      @NonNull LinearLayout exportAllNotes, @NonNull NestedScrollView nestedScrollView,
+      @NonNull MaterialToolbar toolbar, @NonNull TextView toolbarTitle) {
     this.rootView = rootView;
     this.appBarLayout = appBarLayout;
     this.backButton = backButton;
     this.clearAllData = clearAllData;
     this.contentContainer = contentContainer;
+    this.debugConsole = debugConsole;
     this.exportAllNotes = exportAllNotes;
     this.nestedScrollView = nestedScrollView;
     this.toolbar = toolbar;
@@ -115,6 +119,12 @@ public final class SettingsBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.debug_console;
+      LinearLayout debugConsole = ViewBindings.findChildViewById(rootView, id);
+      if (debugConsole == null) {
+        break missingId;
+      }
+
       id = R.id.export_all_notes;
       LinearLayout exportAllNotes = ViewBindings.findChildViewById(rootView, id);
       if (exportAllNotes == null) {
@@ -140,7 +150,8 @@ public final class SettingsBinding implements ViewBinding {
       }
 
       return new SettingsBinding((CoordinatorLayout) rootView, appBarLayout, backButton,
-          clearAllData, contentContainer, exportAllNotes, nestedScrollView, toolbar, toolbarTitle);
+          clearAllData, contentContainer, debugConsole, exportAllNotes, nestedScrollView, toolbar,
+          toolbarTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
