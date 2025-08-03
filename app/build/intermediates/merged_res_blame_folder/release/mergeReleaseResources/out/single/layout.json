@@ -1,0 +1,38 @@
+[
+    {
+        "merged": "com.notex.create.app-mergeReleaseResources-40:/layout/settings.xml",
+        "source": "com.notex.create.app-main-43:/layout/settings.xml"
+    },
+    {
+        "merged": "com.notex.create.app-mergeReleaseResources-40:/layout/item_note.xml",
+        "source": "com.notex.create.app-main-43:/layout/item_note.xml"
+    },
+    {
+        "merged": "com.notex.create.app-mergeReleaseResources-40:/layout/bottom_sheet_options.xml",
+        "source": "com.notex.create.app-main-43:/layout/bottom_sheet_options.xml"
+    },
+    {
+        "merged": "com.notex.create.app-mergeReleaseResources-40:/layout/view.xml",
+        "source": "com.notex.create.app-main-43:/layout/view.xml"
+    },
+    {
+        "merged": "com.notex.create.app-mergeReleaseResources-40:/layout/main.xml",
+        "source": "com.notex.create.app-main-43:/layout/main.xml"
+    },
+    {
+        "merged": "com.notex.create.app-mergeReleaseResources-40:/layout/dialog_rename.xml",
+        "source": "com.notex.create.app-main-43:/layout/dialog_rename.xml"
+    },
+    {
+        "merged": "com.notex.create.app-mergeReleaseResources-40:/layout/edit.xml",
+        "source": "com.notex.create.app-main-43:/layout/edit.xml"
+    },
+    {
+        "merged": "com.notex.create.app-mergeReleaseResources-40:/layout/item_notebook.xml",
+        "source": "com.notex.create.app-main-43:/layout/item_notebook.xml"
+    },
+    {
+        "merged": "com.notex.create.app-mergeReleaseResources-40:/layout/cus.xml",
+        "source": "com.notex.create.app-main-43:/layout/cus.xml"
+    }
+]
