@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<resources>
+<color name="error">#B00020</color>
+<color name="colorOutline">#1F000000</color>
+<color name="colorOnSurface">#000000</color>
+</resources>
